@@ -23,6 +23,7 @@ let grade = null;
 let salary = null;
 let chance = null;
 
+const setGrade = () => {
 switch (true) {
   case experience > 2 && experience <= 5 && isEnglish:
     grade = "middle";
@@ -36,7 +37,9 @@ switch (true) {
   default:
     grade = "junior";
 }
+}
 
+const setSalary = () => {
 switch (grade) {
   case "middle":
     salary = "от 1500$ до 2700$";
@@ -50,7 +53,9 @@ switch (grade) {
   default:
     salary = "от 300$ до 1500$";
 }
+}
 
+const setChance = () => {
 switch (true) {
   case !isEnglish || !isAlgorithms:
     chance = "Шансов нет";
@@ -61,7 +66,11 @@ switch (true) {
   default:
     chance = "Шансы есть";
 }
+}
 
+setGrade();
+setSalary();
+setChance();
 function displayData (fullName, experience, grade, salary, chance) {
 alert(`
   Ваше Имя: ${fullName}
